@@ -1,7 +1,7 @@
 /*
   Using Cloudflare workers to implement a migration, where the redirects are performed by the Cloudflare Worker opposed to being done by the origin server.
 
-    The external redirect file can be found at: 
+    The external redirect file can be found at: https://raw.githubusercontent.com/Kevin-Ellen/cloudflare-worker-redirect-engine-js/main/src/data/redirects.json
 */
 
 addEventListener('fetch', event => {
@@ -14,7 +14,7 @@ const handleRequest = async (request) => {
   const url = new URL(request.url);
 
   // Get the redirects from the (public) GitHub file. As there are two promises, I wrapped them into a single async method
-  const redirectsObj = await(await fetch('https://raw.githubusercontent.com/croud-web-experience/public/master/cloudflare-workers-redirects-file/redirects.json')).json();
+  const redirectsObj = await(await fetch('https://raw.githubusercontent.com/Kevin-Ellen/cloudflare-worker-redirect-engine-js/main/src/data/redirects.json')).json();
 
 // Check if the path is within the redirects object
 if(redirectsObj.hasOwnProperty(url.pathname)){

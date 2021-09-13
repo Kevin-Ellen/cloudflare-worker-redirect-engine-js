@@ -15,7 +15,7 @@ To test the redirects, make a request to:
 * **URL**: https://redirects-inspiration-contained-js-wrangler.croud-testing.workers.dev/products/builders-equipment-and-light-access/
 * **Redirecting URL**: https://example.com/new-destination/builders-equipment-and-light-access/
 
-A simple mapping with from and to URLs can be found in src/data/redirects.json
+A simple mapping with from and to URLs can be found in [src/data/redirects.json](src/data/redirects.json)
 
 ## Implementation
 1. Deploy Cloudflare Worker in Cloudflare using Wrangler or the user-interface
@@ -28,8 +28,8 @@ A simple mapping with from and to URLs can be found in src/data/redirects.json
 Fully completed mapping (JSON) file will be delivered in due time prior to the migration. The URLs within the JSON file within this repo are for testing purposes only.
 
 ## Files
-* src/index.js - the Cloudflare Worker
-* src/data/redirects.js - the redirects
+* [src/index.js](src/index.js) - the Cloudflare Worker
+* [src/data/redirects.json](src/data/redirects.json) - the redirects
 
 ## Documentation
 * **Cloudflare Workers**: https://developers.cloudflare.com/workers/
