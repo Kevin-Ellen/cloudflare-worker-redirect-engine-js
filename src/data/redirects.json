@@ -1,0 +1,4 @@
+{
+  "/hire-sales/":{"status": 301,"from": "/hire-sales/","to": "https://example.com/new-destination/hire-sales"},
+  "/old-domain-2":{"status": 301,"from": "/products/builders-equipment-and-light-access/","to": "https://example.com/new-destination/builders-equipment-and-light-access/"}
+}

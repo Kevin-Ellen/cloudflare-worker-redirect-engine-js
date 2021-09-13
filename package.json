@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "cloudflare-worker-redirect-engine-js",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker - Redirect engine",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Kevin-Ellen <45627930+Kevin-Ellen@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
