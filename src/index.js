@@ -16,17 +16,17 @@ const handleRequest = async (request) => {
   // Get the redirects from the (public) GitHub file. As there are two promises, I wrapped them into a single async method
   const redirectsObj = await(await fetch('https://raw.githubusercontent.com/Kevin-Ellen/cloudflare-worker-redirect-engine-js/main/src/data/redirects.json')).json();
 
-// Check if the path is within the redirects object
-if(redirectsObj.hasOwnProperty(url.pathname)){
+  // Check if the path is within the redirects object
+  if(redirectsObj.hasOwnProperty(url.pathname)){
 
-  // Redirect has been found, store the data in a variable for ease of use in this example
-  const redirDestination = redirectsObj[url.pathname].to;
-    
-  // define the URL. If the string does not start with 'http', add the HTTPS scheme and current domain; we can hard-code the current domain
+    // Redirect has been found, store the data in a variable for ease of use in this example
+    const redirDestination = redirectsObj[url.pathname].to;
+      
+    // define the URL. If the string does not start with 'http', add the HTTPS scheme and current domain; we can hard-code the current domain
 
-  const redirUrl = redirDestination.substring(0,4) === 'http' ? redirDestination :  'https://'  +url.host + redirDestination;
-  // Return the response with the redirecting URL and status
-  return Response.redirect(redirUrl, 301);
+    const redirUrl = redirDestination.substring(0,4) === 'http' ? redirDestination :  'https://'  +url.host + redirDestination;
+    // Return the response with the redirecting URL and status
+    return Response.redirect(redirUrl, 301);
 }
 
   /* Disabled for now, as there are no resources - But you can make it pass-through by just requesting the origin or have a catch-all redirect
