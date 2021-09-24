@@ -9,27 +9,25 @@ Redirects requests on the Edge. The redirects are stored in a JSON file, which r
 
 ## Testing
 To test the redirects, make a request to: 
-* **URL**: https://redirects-inspiration-contained-js-wrangler.croud-testing.workers.dev/hire-sales/
-* **Redirecting URL**: https://example.com/new-destination/hire-sales
+### Example 1
+* **URL**: https://cloudflare-worker-redirect-engine-js.croud-testing.workers.dev/hire-sales/
+  * **Redirecting URL**: https://example.com/new-destination/hire-sales
 
-* **URL**: https://redirects-inspiration-contained-js-wrangler.croud-testing.workers.dev/products/builders-equipment-and-light-access/
-* **Redirecting URL**: https://example.com/new-destination/builders-equipment-and-light-access/
-
-A simple mapping with from and to URLs can be found in [src/data/redirects.json](src/data/redirects.json)
+### Example 2
+* **URL**: https://cloudflare-worker-redirect-engine-js.croud-testing.workers.dev/products/builders-equipment-and-light-access/
+  * **Redirecting URL**: https://example.com/new-destination/builders-equipment-and-light-access/
 
 ## Implementation
 1. Deploy Cloudflare Worker in Cloudflare using Wrangler or the user-interface
-1. Upload the CSV file to a publicly accessible resource, such as FTP on the server or on a GitHub page
-1. Change the location of the JSON file within the Cloudflare Worker
 1. Route the requests through the Cloudflare Worker
 1. Test the redirects by making requests to the 'From' URLs as defined within the JSON file
 
-### Note
-Fully completed mapping (JSON) file will be delivered in due time prior to the migration. The URLs within the JSON file within this repo are for testing purposes only.
-
 ## Files
 * [src/index.js](src/index.js) - the Cloudflare Worker
-* [src/data/redirects.json](src/data/redirects.json) - the redirects
+* [Redirect file on host](http://data.altradgeneration.com.s3-website.eu-west-2.amazonaws.com/hire-sales-redirects.json) - the redirects
+
+### Note
+The URLs within the JSON file within this example are for testing purposes only.
 
 ## Documentation
 * **Cloudflare Workers**: https://developers.cloudflare.com/workers/
